@@ -3,9 +3,9 @@ public class UC2 {
 	public static void main(String[] args) {
 		
 	    LinkedList ll = new LinkedList();
-		ll.push(4);
-		ll.push(34);
-		ll.push(88);
+		ll.push(70);
+		ll.push(30);
+		ll.push(56);
 		ll.printList();
 		
 	}
