@@ -1,57 +1,56 @@
-public class Stack1 {
-
-public static void main(String[] args) {
+public class Stack {
+	public static void main(String[] args) {
+		System.out.print("Stack Elements: ");
+		Stack1 stack = new Stack1();
 		
-	    Stack1 stk = new Stack1();
-		stk.push(70);
-		stk.push(30);
-		stk.push(56);
-		stk.printList();
+		stack.push(10);
+		stack.push(20);
+		stack.push(30);
 		
-	}
-	
-	
-}
-class Stack1 {
-	
-	//1st node
-	Node head;
-	
-	class Node {
-		int data;
-		
-		//2nd node
-		Node next;
-		
-		//node constructor
-		Node(int data){
-			this.data = data;
-			next =  null;
-		}
-		
-	}
-
-	// method to push values one by one
-	public void push(int data) {
-		
-		//1. Create new Node using data
-
-		Node newNode = new Node(data);
-		
-		newNode.next = head;
-		System.out.println(newNode.next);
-		head = newNode;
-	}
-		
-//method to print values one by one
-	public void printList() {
-		System.out.println("List : ");
-		Node temp = head;
-		
-		while(temp != null) {
-			System.out.print(temp.data+ "->");
-			temp = temp.next;
-		}
+		stack.peek();
+		System.out.print("Stack after pop:\n");
+		stack.pop();
+		stack.print();
 	}
 }
+
+class Stack1{
 	
+	private int maxSize;
+	int top=-1;
+	private int stk[];
+	
+	public Stack1() {
+		this.top=-1;
+		this.stk=new int[10];
+		}
+	
+	public Stack1(int maxSize) {
+		this.top=-1;
+		this.stk=new int[maxSize];
+		}
+	
+	public boolean push(int data){
+		if(isFull()){
+			System.out.print("Stack overFlow");
+			return false;
+		}else{
+			stk[++top]=data;
+			System.out.println(data);
+			return true;
+		}
+	}
+
+
+public void print(){
+		if(isEmpty()){
+			System.out.print("Stack underFlow");
+		}
+
+		for(int ele=0 ;ele<=this.top ;ele++)
+		{
+			System.out.print(" "+stk[ele]);
+		}
+	System.out.println();
+	}
+}
