@@ -41,7 +41,9 @@ class Stack1{
 		}
 	}
 
-
+public boolean isFull(){
+		return  this.top >= stk.length -1 ;
+	}
 public void print(){
 		if(isEmpty()){
 			System.out.print("Stack underFlow");
@@ -52,5 +54,9 @@ public void print(){
 			System.out.print(" "+stk[ele]);
 		}
 	System.out.println();
+	}
+
+public boolean isFull(){
+		return  this.top >= stk.length -1 ;
 	}
 }
